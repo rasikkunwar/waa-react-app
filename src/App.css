@@ -1,0 +1,14 @@
+.textInput{
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  width: 3%;
+  margin: 30px 170px;
+  gap: 10px;
+}
+input[type=text]{
+  padding: 10px;
+}
+#changeTitle{
+  cursor: pointer;
+}
