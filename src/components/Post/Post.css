@@ -13,7 +13,7 @@
     text-align: justify;
     cursor: pointer;
 }
-.postDetail{
+.postDetail,.addPost{
     border: 2px solid #4E81BD;
     margin: auto;
     margin-top: 2%;
@@ -31,17 +31,38 @@
     display: flex;
     gap: 10px;
 }
-#editBtn,#closeBtn{
+#editBtn,#closeBtn,#addPostBtn,#submitPostBtn{
     background-color: #4E81BD;
     color: white;
     padding: 1%;
     border: none;
     cursor: pointer;
 }
-#deleteBtn{
+#deleteBtn,#cancelBtn{
     background-color: #ff000f;
     color: white;
     padding: 1%;
     border: none;
     cursor: pointer;
+}
+.addPostBtn{
+    margin-left: 10px;
+    margin-top: 10px;
+}
+#submitPost{
+    margin-top: 10px;
+}
+#postTitle,#postContent,#postAuthor{
+    display: flex;
+    gap: 10px;
+    margin: 10px;
+}
+#cancelBtn{
+    margin-left: 10px;
+}
+.comments{
+    text-align:left;
+}
+#commentTitle{
+    text-decoration: underline;
 }
