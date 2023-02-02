@@ -1,8 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PostDetail from "../components/Post/PostDetail";
 import Posts from "./Posts/Posts";
 import axios from "axios";
 import AddPost from "../components/Post/AddPost";
+export const PostDetailContext = React.createContext();
 const Dashboard = () => {
   const [postState, setPostState] = useState([]);
 
@@ -73,11 +74,12 @@ const Dashboard = () => {
         </button>
       </div>
       {showPostDetail && (
+        <PostDetailContext.Provider value={selectedPost}>
         <PostDetail
-          postDetail={selectedPost}
           handleClosePost={handleClosePost}
           fetchPosts={getPosts}
         ></PostDetail>
+        </PostDetailContext.Provider>
       )}
       {showAddPost && <AddPost handleCloseAddPost={handleCloseAddPost} fetchPosts={getPosts}></AddPost>}
     </div>

@@ -1,9 +1,12 @@
 import './Post.css'
+import {PostIdContext} from  "../../containers/Posts/Posts"
+import { useContext } from 'react'
 const Post = (props) => {
+    const id = useContext(PostIdContext);
     return (
-        <div className="Content" onClick={()=> props.handleSelectedPost({id:props.id,title:props.title,author:props.author,content:props.content})}>
+        <div className="Content" onClick={()=> props.handleSelectedPost({id:id})}>
             <div>
-                Id:{props.id}
+                Id:{id}
             </div>
             <div>
                 Title:{props.title}
