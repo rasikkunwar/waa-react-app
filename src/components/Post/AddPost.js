@@ -1,9 +1,10 @@
 import axios from "axios";
 import { useRef } from "react"
+import { useNavigate } from "react-router-dom";
 
 const AddPost = (props)=>{
     const newPostForm = useRef();
-
+    const navigate = useNavigate();
     function addPost(event){
         event.preventDefault();
         const form = newPostForm.current;
@@ -15,8 +16,7 @@ const AddPost = (props)=>{
         axios.post("http://localhost:8080/api/v1/posts",data)
         .then(data => {
             console.log('Success', data);
-            props.fetchPosts();
-            props.handleCloseAddPost();
+            navigate("/")
         })
         .catch(error => {
             console.error('Error' ,error);
@@ -39,7 +39,7 @@ const AddPost = (props)=>{
                 </div>
                 <div id="postBtn">
                     <button id="submitPostBtn" onClick={addPost}>Add Post</button>
-                    <button id="cancelBtn" onClick={()=>props.handleCloseAddPost()}>Cancel</button>
+                    <button id="cancelBtn" onClick={()=>navigate("/")}>Cancel</button>
                 </div>
             </form>
         </div>

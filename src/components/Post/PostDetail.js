@@ -1,6 +1,6 @@
 import axios from "axios";
 import React, { useContext } from "react";
-import { PostDetailContext } from "../../containers/Dashboard";
+import { PostDetailContext } from "../../containers/Posts/Posts";
 import PostComment from "../Comment/PostComment";
 
 const PostDetail = (props) =>  {
